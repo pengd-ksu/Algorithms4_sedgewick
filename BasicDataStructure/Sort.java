@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 import edu.princeton.cs.algs4.In;
 
-public class MergeSort {
+public class Sort {
     private static int[] merge_sort(int [] input) {
         if (input.length <= 1) return input;
         int mid = input.length / 2;
