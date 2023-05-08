@@ -10,6 +10,8 @@ public class HeapSort {
             int tmp = arr[0];
             arr[0] = arr[i];
             arr[i] = tmp;
+            // First arr will decrease size by one, and at each iteration,
+            // it will decrease one too.
             maxHeapify(arr, i, 0);
         }
     }
