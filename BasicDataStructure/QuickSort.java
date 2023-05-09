@@ -4,19 +4,20 @@ import edu.princeton.cs.algs4.StdOut;
 public class QuickSort {
     private static void quickSort(int [] nums, int left, int right) {
         if (left >= right) return;
-        int mid = left + (right - left) / 2, last = left, id = left+1;
-        swap(left, mid, nums);
+        int mid = left + (right - left) / 2, last = left, id = left + 1;
+        swap(nums, mid, left);
         while (id <= right) {
             if (nums[id] < nums[left]) {
-                swap(id, ++last, nums);
+                swap(nums, ++last, id);
             }
             id++;
         }
-        swap(last, left, nums);
+        swap(nums, left, last);
         quickSort(nums, left, last - 1);
         quickSort(nums, last + 1, right);
     }
-    private static void swap (int i, int j, int[] nums) {
+
+    private static void swap (int[] nums, int i, int j) {
         int tmp = nums[i];
         nums[i] = nums[j];
         nums[j] = tmp;
