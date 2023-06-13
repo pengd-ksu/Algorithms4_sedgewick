@@ -8,7 +8,7 @@ public class BubbleSort {
         arr[j] = tmp;
     }
 
-    public static void selectionSort(int[] arr) {
+    public static void bubbleSort(int[] arr, int len) {
         boolean hasSwapped = true;
         while (hasSwapped) {
             hasSwapped = false;
@@ -18,13 +18,17 @@ public class BubbleSort {
                     hasSwapped = true;
                 }
             }
+            // Every time for is done, the largest will
+            // be pushed to the end, and valid length will 
+            // decrement by one.
+            len -= 1;
         }
     }
 
     public static void main(String[] args) {
         In in = new In(args[0]);
         int[] input = in.readAllInts();
-        selectionSort(input);
+        bubbleSort(input, input.length);
         for (int i : input) {
             StdOut.printf("%d ", i);
         }
